@@ -268,7 +268,7 @@ input:not(:focus):valid ~ .floating-label {
 
 .btn-cancel,
 .btn-cancel:hover {
-  color: #5cb85c;
+  color: $successColor;
   font-weight: 600;
   border: 1px solid $successColor;
   background-color: $whiteColor;
