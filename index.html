@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Admin Control System</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <nav class="navbar bg-blue">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="index.html">WebSiteName</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <form class="navbar-form navbar-left" action="">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Type here to search " name="search">
+              <div class="input-group-btn">
+                <button class="btn btn-default" type="submit">
+                  <i class="glyphicon glyphicon-search"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+          <li><a href="#"><span class="glyphicon glyphicon-bell text-white"></span></a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle text-white" data-toggle="dropdown" href="#">John Doe <img src="images/user.jpg" class="user-image" alt="User Image">
+              <span class="caret"></span></a>
+            <ul class="dropdown-menu profie-options">
+              <li><a href="#">Profile</a></li>
+              <li><a href="#">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Header Closed -->
+  
+  <div class="container">
+    <div class="heading-section">
+        <h3 class="heading">Dashboard</h3>
+        <span>MON | FEB 8, 2021</span>
+    </div>
+
+     <!-- Stats -->
+    <div class="row">
+        <div class="col-md-3">
+            <div class="info-box">
+                <span class="info-box-icon"><i class="ion ion-ios-gear-outline"></i></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">Loans Issued</span>
+                  <span class="info-box-number">5,012</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="info-box">
+                <div class="info-box-content">
+                  <span class="info-box-text">Loans in Progress</span>
+                  <span class="info-box-number">4,485</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="info-box">
+                <div class="info-box-content">
+                  <span class="info-box-text">Loans Rejected</span>
+                  <span class="info-box-number">1,235</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="info-box">
+                <div class="info-box-content">
+                  <span class="info-box-text">Yearly Sales</span>
+                  <span class="info-box-number">$4 million</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+      <!-- user card -->
+        <div class="col-md-4">
+            <div class="info-box">
+                <ul class="list-group">
+                  <li class="list-group-item bg-blue text-white"><strong>Card Title</strong></li>
+                  <li class="list-group-item bg-blue text-white">User Online <span class="pull-right text-light">500</span></li>
+                  <li class="list-group-item bg-blue text-white">User Online <span class="pull-right">500</span></li>
+                  <li class="list-group-item bg-blue text-white">User Online <span class="pull-right">500</span></li>
+                  <li class="list-group-item bg-blue text-white">User Online <span class="pull-right">500</span></li>
+                  <li class="list-group-item bg-blue text-white">User Online <span class="pull-right">500</span></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Pie Chart -->
+        <div class="col-md-4">
+          <div class="info-box">
+            <div class="info-box-content">
+              <div class="row">
+                <div class="col-md-12">
+                  <span class="info-box-text" style="display: inline;">Ring Chart</span>
+                  <div class="dropdown table-action-link">
+                    <a class="dropdown-toggle" type="button" data-toggle="dropdown">Feb
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu table-actions">
+                      <li><a href="#">Jan</a></li>
+                      <li><a href="#">Feb</a></li>
+                      <li><a href="#">March</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="chart-container" style="position: relative; height:32vh; width:80%; top:-20px ">
+                <canvas id="pieChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bar Chart -->
+        <div class="col-md-4">
+          <div class="info-box">
+            <div class="info-box-content">
+              <div class="row">
+                <div class="col-md-12">
+                  <span class="info-box-text" style="display: inline;">Bar Chart</span>
+                  <div class="dropdown table-action-link" >
+                    <a class="dropdown-toggle" type="button" data-toggle="dropdown">Feb
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu table-actions">
+                      <li><a href="#">Jan</a></li>
+                      <li><a href="#">Feb</a></li>
+                      <li><a href="#">March</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="chart-container" style="position: relative; height:32vh;">
+                <canvas id="barchart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- Data Table -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="info-box">
+          <div class="info-box-content">
+            <div class="table-responsive">
+            <table id="myTable" class="table table-hover">
+              <thead>
+              <tr>
+                <th>STATUS</th>
+                <th>DATE OF REQUEST </th>
+                <th>LOAN OFFICER</th>
+                <th>CONSUMER NAME</th>
+                <th>SUFFIX</th>
+                <th>CONSUMER EMAIL ID</th>
+                <th>CONSUMER</th>
+                <th>PRODUCTS</th>
+                <th>CONSUMER DECISION</th>
+                <th>ML SERVICE ID</th>
+                <th>ACTIONS</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td><span class="active-dot"></span></td>
+                <td> 13/06/2021</td>
+                <td>Alex T</td>
+                <td>Thomas</td>
+                <td>Jr.</td>
+                <td>cambil.02@gmail.com</td>
+                <td>+1(202)555-0123</td>
+                <td>4.56% for 30 years</td>
+                <td>Yes</td>
+                <td>924899</td>
+                <td>
+                  <div class="dropdown table-action-link">
+                    <a class="dropdown-toggle" type="button" data-toggle="dropdown">
+                      <div class="action"></div>
+                   </a>
+                    <ul class="dropdown-menu table-actions">
+                      <li><a href="#">Edit</a></li>
+                      <li><a href="#">Delete</a></li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><span class="inactive-dot"></span></td>
+                <td> 11/02/2010</td>
+                <td>Alex T</td>
+                <td>Thomas</td>
+                <td>Jr.</td>
+                <td>cambil.02@gmail.com</td>
+                <td>+1(202)555-0123</td>
+                <td>4.56% for 30 years</td>
+                <td>Yes</td>
+                <td>924899</td>
+                <td>
+                  <div class="dropdown table-action-link">
+                    <a class="dropdown-toggle" type="button" data-toggle="dropdown">
+                      <div class="action"></div>
+                   </a>
+                    <ul class="dropdown-menu table-actions">
+                      <li><a href="#">Edit</a></li>
+                      <li><a href="#">Delete</a></li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><span class="active-dot"></span></td>
+                <td> 14/02/2020</td>
+                <td>John T</td>
+                <td>Manin</td>
+                <td>Jr.</td>
+                <td>john.02@gmail.com</td>
+                <td>+1(202)555-0123</td>
+                <td>4.56% for 30 years</td>
+                <td>No</td>
+                <td>435345</td>
+                <td>
+                  <div class="dropdown table-action-link">
+                    <a class="dropdown-toggle" type="button" data-toggle="dropdown">
+                      <div class="action"></div>
+                   </a>
+                    <ul class="dropdown-menu table-actions">
+                      <li><a href="#">Edit</a></li>
+                      <li><a href="#">Delete</a></li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><span class="inactive-dot"></span></td>
+                <td> 11/02/2020</td>
+                <td>Max </td>
+                <td>Thomas</td>
+                <td>Sr.</td>
+                <td>mac@gmail.com</td>
+                <td>+1(202)555-0123</td>
+                <td>5.56% for 10 years</td>
+                <td>Yes</td>
+                <td>234</td>
+                <td>
+                  <div class="dropdown table-action-link">
+                    <a class="dropdown-toggle" type="button" data-toggle="dropdown">
+                      <div class="action"></div>
+                   </a>
+                    <ul class="dropdown-menu table-actions">
+                      <li><a href="#">Edit</a></li>
+                      <li><a href="#">Delete</a></li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><span class="active-dot"></span></td>
+                <td> 14/02/2020</td>
+                <td>Martin </td>
+                <td>Manin</td>
+                <td>Jr.</td>
+                <td>john.02@gmail.com</td>
+                <td>+1(202)555-0123</td>
+                <td>4.56% for 30 years</td>
+                <td>No</td>
+                <td>435345</td>
+                <td>
+                  <div class="dropdown table-action-link">
+                    <a class="dropdown-toggle" type="button" data-toggle="dropdown">
+                      <div class="action"></div>
+                   </a>
+                    <ul class="dropdown-menu table-actions">
+                      <li><a href="#">Edit</a></li>
+                      <li><a href="#">Delete</a></li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><span class="active-dot"></span></td>
+                <td> 14/02/2020</td>
+                <td>Rohan </td>
+                <td>Manin</td>
+                <td>Jr.</td>
+                <td>kami.02@gmail.com</td>
+                <td>+1(202)555-0123</td>
+                <td>4.56% for 30 years</td>
+                <td>No</td>
+                <td>435345</td>
+                <td>
+                  <div class="dropdown table-action-link">
+                    <a class="dropdown-toggle" type="button" data-toggle="dropdown">
+                      <div class="action"></div>
+                   </a>
+                    <ul class="dropdown-menu table-actions">
+                      <li><a href="#">Edit</a></li>
+                      <li><a href="#">Delete</a></li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><span class="active-dot"></span></td>
+                <td> 14/02/2020</td>
+                <td>John T</td>
+                <td>Manin</td>
+                <td>Jr.</td>
+                <td>bush.02@gmail.com</td>
+                <td>+1(202)555-0123</td>
+                <td>4.56% for 30 years</td>
+                <td>No</td>
+                <td>435345</td>
+                <td>
+                  <div class="dropdown table-action-link">
+                    <a class="dropdown-toggle" type="button" data-toggle="dropdown">
+                      <div class="action"></div>
+                   </a>
+                    <ul class="dropdown-menu table-actions">
+                      <li><a href="#">Edit</a></li>
+                      <li><a href="#">Delete</a></li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><span class="active-dot"></span></td>
+                <td> 14/02/2020</td>
+                <td>John T</td>
+                <td>Manin</td>
+                <td>Jr.</td>
+                <td>sam.02@gmail.com</td>
+                <td>+1(202)555-0123</td>
+                <td>4.56% for 30 years</td>
+                <td>No</td>
+                <td>435345</td>
+                <td>
+                  <div class="dropdown table-action-link">
+                    <a class="dropdown-toggle" type="button" data-toggle="dropdown">
+                      <div class="action"></div>
+                   </a>
+                    <ul class="dropdown-menu table-actions">
+                      <li><a href="#">Edit</a></li>
+                      <li><a href="#">Delete</a></li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              </tbody>
+              <tfoot>
+              <tr>
+                <th>STATUS</th>
+                <th>DATE OF REQUEST </th>
+                <th>LOAN OFFICER</th>
+                <th>CONSUMER NAME</th>
+                <th>SUFFIX</th>
+                <th>CONSUMER EMAIL ID</th>
+                <th>CONSUMER</th>
+                <th>PRODUCTS</th>
+                <th>CONSUMER DECISION</th>
+                <th>ML SERVICE ID</th>
+                <th>ACTIONS</th>
+              </tr>
+              </tfoot>
+            </table>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
